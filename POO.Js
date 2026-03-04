@@ -25,3 +25,35 @@ console.log(pizzahawaiana.empacar());
 
 const pizzapeperoni = new pizza ("doble","grande",["jamon","queso","peperoni"]);
 console.log(pizzapeperoni.preparar().hornear().empacar());
+
+class combos extends Pizza {
+    constructor(combo , cantidad , tamano , masa , ingrediente, bebidas, postres)  {
+        super(masa, tamano, ingrediente);
+        this.combo = combo
+        this.cantidad =  cantidad
+        this.bebidas = bebidas
+        this.postres = postres
+    }
+
+    elegircombo() {
+        this.preparar();
+        this.hornear();
+        this.empacar();
+
+        console.log(
+            `has elegido el combo ${this.combo} que incluye ${this.cantidad} pizzas de tamano ${this.tamano} con masa
+            ${this.masa} y los siguientes ingredientes: ${this.ingredientes}. ademas, incluye una bebida de ${this.
+                bebida} y un postre de ${this.postre}.`
+        );
+        return this;    
+   
+           
+    }
+
+
+}
+
+
+
+
+
