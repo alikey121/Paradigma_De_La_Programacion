@@ -26,34 +26,30 @@ console.log(pizzahawaiana.empacar());
 const pizzapeperoni = new pizza ("doble","grande",["jamon","queso","peperoni"]);
 console.log(pizzapeperoni.preparar().hornear().empacar());
 
-class combos extends Pizza {
-    constructor(combo , cantidad , tamano , masa , ingrediente, bebidas, postres)  {
-        super(masa, tamano, ingrediente);
-        this.combo = combo
-        this.cantidad =  cantidad
-        this.bebidas = bebidas
-        this.postres = postres
+class Combos extends pizza {
+    constructor(combo, cantidad, tamano, masa, ingredientes, bebida, postre) {
+        super(masa, tamano, ingredientes);
+        this.combo = combo;
+        this.cantidad = cantidad;
+        this.bebida = bebida;
+        this.postre = postre;
     }
 
-    elegircombo() {
+    elegirCombo() {
         this.preparar();
         this.hornear();
         this.empacar();
 
         console.log(
-            `has elegido el combo ${this.combo} que incluye ${this.cantidad} pizzas de tamano ${this.tamano} con masa
-            ${this.masa} y los siguientes ingredientes: ${this.ingredientes}. ademas, incluye una bebida de ${this.
-                bebida} y un postre de ${this.postre}.`
+            `Has elegido el combo ${this.combo} que incluye ${this.cantidad} pizzas de tamaño ${this.tamano} con masa ${this.masa} y los siguientes ingredientes: ${this.ingredientes}. Además, incluye una bebida de ${this.bebida} y un postre de ${this.postre}.`
         );
-        return this;    
-   
-           
-    }
 
+        return this;
+    };
+};
 
-}
+const comboFamiliar = new Combos("Familiar",4,"grande","delgada",["jamón", "piña", "queso"],"refresco","helado"
+);
 
-
-
-
+console.log(comboFamiliar.elegirCombo());
 
